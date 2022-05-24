@@ -1,11 +1,21 @@
+import { bands } from '../../seeds';
+import './style.css';
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
+import DisplayCard from '../displayCard/DisplayCard';
 
-const bands = () => {
+
+const Bands = () => {
+
+  console.log(bands)
   return (
-    <div>bands</div>
+    <div className='bandsContainer'>
+      {bands?.map((band, i) => (
+        <DisplayCard key={i} type="band" band={band} />
+      ))}
+    </div>
   )
 }
 
-export default bands
+export default Bands
