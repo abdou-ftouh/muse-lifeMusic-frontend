@@ -25,8 +25,12 @@ export const bands = [
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
-        ]
+        ],
+        mediaLinks: [ {facebook: "facebook"}, {instagram: "instagram"}, {spotify: "spotify"}, {tiktok: "tiktok"}, {twitter: "twittter"}, {youtube: "youtube"} ],
+        calendarType: "google",
+        calendarID: "string"
     },
+    
     {
         name: "Black Diamond Band",
         members: [
@@ -52,7 +56,11 @@ export const bands = [
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
-        ]
+        ],
+        mediaLinks: [ {facebook: "facebook"}, {instagram: "instagram"}, {spotify: "spotify"}, {tiktok: "tiktok"}, {twitter: "twittter"}, {youtube: "youtube"} ],
+        calendarType: "google",
+        calendarID: "string",
+
     },
     {
         name: "Bender Funk",
@@ -79,7 +87,10 @@ export const bands = [
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
-        ]
+        ],
+        mediaLinks: [ {facebook: "facebook"}, {instagram: "instagram"}, {spotify: "spotify"}, {tiktok: "tiktok"}, {twitter: "twittter"}, {youtube: "youtube"} ],
+        calendarType: "google",
+        calendarID: "string"
     },
     {
         name: "PsychoDelics",
@@ -101,7 +112,10 @@ export const bands = [
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
             {startTime: "startTime", endTime: "endTime", location: "location"},
-        ]
+        ],
+        mediaLinks: [ {facebook: "facebook"}, {instagram: "instagram"}, {spotify: "spotify"}, {tiktok: "tiktok"}, {twitter: "twittter"}, {youtube: "youtube"} ],
+        calendarType: "google",
+        calendarID: "string"
     },
 ]
 
