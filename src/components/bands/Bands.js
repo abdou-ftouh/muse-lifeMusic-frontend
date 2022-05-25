@@ -8,12 +8,14 @@ import DisplayCard from '../displayCard/DisplayCard';
 
 const Bands = () => {
 
-  console.log(bands)
+  // console.log(bands)
   return (
     <div className='bandsContainer'>
-      {bands?.map((band, i) => (
-        <DisplayCard key={i} type="band" band={band} />
-      ))}
+      {
+        bands?.map((band, i) => (
+          <DisplayCard key={i} type="band" band={band} />
+        ))
+      }
     </div>
   )
 }
