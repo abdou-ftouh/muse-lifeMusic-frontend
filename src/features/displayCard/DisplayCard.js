@@ -1,15 +1,21 @@
 import "./style.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import React, { useState, useEffect } from "react";
+// import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import Bands from "../bands/Bands";
 import Events from "../events/Events";
+// import { faH, faHeartCircleBolt, faHeartCircleExclamation, faHeartCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 const DisplayCard = ({ type, band }) => {
+
   switch (type) {
     case "band":
       return (
         <div className="displayCard bandCard">
+          <FontAwesomeIcon icon={ faHeart } ></FontAwesomeIcon>
           {/* <img src={band.images[0]} alt={band.name} /> */}
           <div className="bandCardInfo">
             <h5>{band.name}</h5>

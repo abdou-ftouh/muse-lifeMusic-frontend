@@ -1,15 +1,15 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import Header from './features/header/Header';
+import Footer from './features/footer/Footer';
 import HomePage from './pages/Home/HomePage';
 import ShowPage from './pages/Show/ShowPage';
 import FormPage from './pages/Forms/FormPage';
 
 function App() {
   return (
-    <div>
+    <div className='main'>
         <Header />
 
         <Routes>
