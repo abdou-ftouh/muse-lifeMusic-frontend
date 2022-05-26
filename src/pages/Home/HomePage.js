@@ -26,7 +26,6 @@ const HomePage = () => {
           } */}
 
           <div className='side-container'>
-            <h3>SIDEBAR</h3>
             <Sidebar />
           </div>
           <div className='sub-container'>

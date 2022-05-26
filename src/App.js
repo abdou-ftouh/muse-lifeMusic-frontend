@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import HomePage from './pages/Home/HomePage';
 import ShowPage from './pages/Show/ShowPage';
 import FormPage from './pages/Forms/FormPage';
-import Header from './components/globals/Header';
-import Footer from './components/globals/Footer';
 
 function App() {
   return (

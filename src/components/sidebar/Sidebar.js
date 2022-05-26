@@ -9,15 +9,18 @@ const Sidebar = () => {
 // ------- LOAD MAP ACCESS & SETUP ---------
     const { isLoaded  } = useLoadScript({
       googleMapsApiKey: 'AIzaSyBugMXwDHrB8nyOp1ekm086PfCuWrQU2W0',
+      // googleMapsApiKey: process.env.GOOGLE_MAPS_KEY,
       libraries: ["places"]
     });
 
   return (
-    <div>
+    <div className='sidebar'>
       <div className='filter-container'>
+        <h3>FILTERS</h3>
         
       </div>
       <div className='map-container'>
+        <h3 style={{postions: "absolute"}}>Map</h3>
         { !isLoaded ? <div>Loading...</div> 
               : <Map />
         }

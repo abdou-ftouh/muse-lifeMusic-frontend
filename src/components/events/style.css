@@ -1,7 +1,7 @@
 .eventsContainer {
     display: grid;
-    min-width: fit-content;
     grid-template-columns: repeat(4, 1fr);
+    min-width: fit-content;
     row-gap: 0.5rem;
     column-gap: 0.25rem;
     justify-content: space-between;
