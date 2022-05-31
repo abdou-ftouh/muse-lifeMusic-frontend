@@ -14,10 +14,16 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/bands" element={<ShowPage type="band" />} />
-          <Route exact path="/events" element={<ShowPage type="events" />} />
+
+          <Route exact path="/bands" element={<HomePage type="band"/>} />
+          <Route exact path="/events" element={<HomePage type="events" />} />
+
+          <Route exact path="/bands/:id" element={<ShowPage id=""/>} />
+          <Route exact path="/events/:id" element={<ShowPage id="" />} />
+
           <Route exact path="/signIn" element={<FormPage type="signIn" />} />
-          <Route exact path="/singUp" element={<FormPage type="signUp" />} />
+          <Route exact path="/signUp" element={<FormPage type="signUp" />} />
+          
           <Route exact path="/admin" element={<FormPage type="signUp" />} />
         </Routes>
 

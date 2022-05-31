@@ -6,4 +6,11 @@
     background-color: darkgrey;
     border: 3px inset black;
     border-radius: 0.5rem;
+
+    text-decoration: none;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    font-style: oblique;
 }
+

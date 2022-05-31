@@ -7,19 +7,17 @@ import { Link } from 'react-router-dom';
 import DisplayCard from '../displayCard/DisplayCard';
 
 const Bands = () => {
-  // const bands = useSelector(state => state.bands);
+  const bands = useSelector(state => state.bands);
 
-  // const bandsList = bands?.map((band, i) => (
-  //   <DisplayCard key={i} type="band" band={band} />
-  // ))
+  const bandsList = bands?.map((band, i) => (
+    <DisplayCard key={i} type="band" band={band} />
+  ))
 
   // console.log(bands)
+
   return (
     <div className='bandsContainer'>
-      {/* {bandsList} */}
-      {bands?.map((band, i) => (
-    <DisplayCard key={i} type="band" band={band} />
-  ))}
+      {bandsList}
     </div>
   )
 }
