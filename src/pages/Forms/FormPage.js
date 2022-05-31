@@ -107,6 +107,7 @@ const FormPage = ({ type }) => {
             console.log('Tval.....' + targetValue)
             console.log('Tindex....' + targetIndex)
             console.log(newMediaArray)
+            console.log(newMediaArray)
 
             // if (targetValue) {
             if (targetValue && tempMediaType === targetValue[0]) {
