@@ -29,15 +29,15 @@ const Map = () => {
     
     return (
           
-                <GoogleMap 
-                    zoom={10} 
-                    center={center} 
-                    mapContainerStyle={{width: '100%', height: '100%', marginBottom: "0", position: "absolute"}} 
-                    options={{options}}
-                    onLoad={onLoad}
-                >
-                    <Marker position={{lat: 44, lng: -80}} />
-                </GoogleMap>
+        <GoogleMap 
+            zoom={10} 
+            center={center} 
+            mapContainerStyle={{width: '100%', height: '100%', marginBottom: "0", position: "absolute"}} 
+            options={{options}}
+            onLoad={onLoad}
+        >
+            <Marker position={{lat: 44, lng: -80}} />
+        </GoogleMap>
 
 
     )

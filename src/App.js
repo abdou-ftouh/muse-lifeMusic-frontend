@@ -6,6 +6,7 @@ import Footer from './features/footer/Footer';
 import HomePage from './pages/Home/HomePage';
 import ShowPage from './pages/Show/ShowPage';
 import FormPage from './pages/Forms/FormPage';
+import Bands from './features/bands/Bands';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
 
-          <Route exact path="/bands" element={<HomePage type="band"/>} />
+          <Route exact path="/bands" element={<Bands/>} />
           <Route exact path="/events" element={<HomePage type="events" />} />
 
           <Route exact path="/bands/:id" element={<ShowPage id=""/>} />

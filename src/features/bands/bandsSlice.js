@@ -23,9 +23,9 @@ export const bandsSlice = createSlice({
         // ---- CREATE: pass bandForm data to server ----
         // send the data to the backend to be restructured
 
-        // createBand(state, action) {
-        //     state.push(action.payload)
-        // },
+        createBand(state, action) {
+            state.push(action.payload)
+        },
         createBand: {
             reducer(state, action) {
                 state.push(action.payload)

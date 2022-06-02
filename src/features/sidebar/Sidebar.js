@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
 // ------- LOAD MAP ACCESS & SETUP ---------
+
     // const { isLoaded  } = useLoadScript({
     //   googleMapsApiKey: 'AIzaSyBugMXwDHrB8nyOp1ekm086PfCuWrQU2W0',
     //   // googleMapsApiKey: process.env.GOOGLE_MAPS_KEY,
@@ -20,8 +21,8 @@ const Sidebar = () => {
         
       </div>
       <div className='map-container'>
-        <h3 style={{postions: "absolute"}}>Map</h3>
-        {/* { !isLoaded ? <div>Loading...</div> 
+        {/* <h3 style={{postions: "absolute"}}>Map</h3> */}
+        {/* { !isLoaded ? <div>Loading Map...</div> 
               : <Map />
         } */}
       </div>
