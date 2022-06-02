@@ -1,6 +1,7 @@
 .displayCard {
     height: 180px;
     width: 180px;
+    padding-top: 0;
 
 
     background-color: darkgrey;
@@ -14,3 +15,23 @@
     font-style: oblique;
 }
 
+.genres {
+    display: flex;
+    min-width: 100%;
+    font-size: x-small;
+    font-weight: lighter;
+    
+}
+.genres ul {
+    list-style: none;
+    display: inline;
+}
+
+.likes {
+    display: flex;
+    margin-left: 70%;
+    align-items: center;
+}
+.likes h6 {
+    margin: 0;
+}
