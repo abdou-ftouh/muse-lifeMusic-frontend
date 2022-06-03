@@ -1,4 +1,4 @@
-.header {
+/* .header {
     height: 5vh;
     display: flex;
     align-items: center;
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     min-width: 30%;
+    
 }
 
 .site-info {
@@ -36,7 +37,7 @@
     padding: 1rem;
 }
 .user-avatar {
-    /* z-index: 1; */
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,3 +59,110 @@
     background: grey;
     color: white;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  } */
+  @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Mochiy+Pop+One&display=swap');
+* {
+    margin: 0%;
+    padding: 0;
+    font-family: 'Gentium Plus', serif;
+}
+
+  .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      margin-bottom: 15px;
+  
+  }
+  .logo{
+      
+          margin-left: 1rem;
+          color: wheat;
+          font-size: 40px;
+          font-weight: bolder;
+}
+.ul{
+    display: flex;
+    margin: 23px;
+    list-style-type: none;
+    font-size: bolder;
+
+
+}
+.item{
+    display: flex;
+}
+li{
+    margin: 0 2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+    padding-top: 8px;
+
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-size: bolder;
+}
+
+/* https://codepen.io/jeremyloyd/pen/EaavQb */
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+.navigation {
+  width: 100%;
+  background-color: black;
+}
+
+img {
+  width: 25px;
+  border-radius: 50px;
+  float: left;
+}
+
+.logout {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+	position: relative;
+  right: -4px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  
+}
+
+.button {
+	text-decoration: none;
+	float: right;
+  padding: 12px;
+  margin: 15px;
+  color: white;
+  width: 25px;
+  background-color: black;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+button:hover {
+  width: 100px;
+}
+
+button:hover .logout{
+  opacity: .9;
+}
+
+button {
+  text-decoration: none;
+}
+
