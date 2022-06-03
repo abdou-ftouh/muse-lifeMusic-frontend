@@ -1,7 +1,8 @@
 import './style.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Bands from '../../features/bands/Bands';
-import { createBand } from '../../features/bands/bandsSlice';
+
+import { createBand, getBands } from '../../features/bands/bandsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { faHouseChimneyUser } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
@@ -15,22 +16,36 @@ const bandDefaults = {
             images: [], 
         },
     ],
-    mediaLinks: { facebook : "facebookLink", instagram : "instagramLink", tiktok : "tiktokLink", twitter : "twitterLink" }, 
+    mediaLinks: { facebook : "", instagram : "", tiktok : "", twitter : "" }, 
     biography: "",
     genres: [],
     calendarType: "Google",
     calendarID: "",
-    events: []
+    events: [],
+    likes: 0,
 }
 
 
-const FormPage = ({ type }) => {
+const FormPage = () => {
     const dispatch = useDispatch();
+    // const showBands = useSelector(getBands)
     const [formState, setFormState] = useState(bandDefaults);
     const [members, setMembers] = useState([]);
     const [mediaState, setMediaState] = useState({});
 
     // ---------------- HANDLE CHANGE ----------------
+
+    let tempMediaType;
+    let tempMediaLink;
+    let tempState = bandDefaults.mediaLinks;
+
+    useEffect(() => {
+        setFormState({ ...formState, mediaLinks : tempState })
+        console.log('-------- USE EFFECT ----------')
+        console.log(formState.mediaLinks)
+        console.log('-------- USE EFFECT ----------')
+        
+    }, [ tempState ] )
 
 {/* CLEAR FORM ------------- */}
         const clearForm = (e) => {
@@ -84,76 +99,47 @@ const FormPage = ({ type }) => {
         }
 {/* MEDIA ICONS ------------- */}
         // console.log(formState.mediaLinks)
-        let tempMediaType;
-        let tempMediaLink;
-        let finalObject = {}
-        let tempState = bandDefaults.mediaLinks;
-
+    
+        
         const handleMediaIcons = (e) => {
             const { name, value } = e.target;
-
+            
             if(name === 'mediaType') {
                 tempMediaType = value
-                // console.log('TYPE: ' + tempMediaType)
+                console.log('TYPE: ' + tempMediaType)
             }
             if(name === 'mediaLink') {
-                tempMediaLink = value
-                // console.log('LINK: ' + tempMediaLink)
+                tempState[tempMediaType] = value
+                console.log('LINK: ' + tempState[tempMediaType])
             }
+            // let targetValue = tempState[tempMediaType]
+            // console.log('TARGET...' + targetValue)
 
-            let newEntry = [ tempMediaType , tempMediaLink ]
-            let newMediaArray = Object.entries(tempState)
-            
-
-            // console.log('New Entry....' + newEntry)
-            // console.log(newMediaArray)
-
-            const targetValue = newMediaArray.find(entry => entry[0] === newEntry[0])
-            const targetIndex = newMediaArray.indexOf(targetValue)
-
-            // console.log('Tval.....' + targetValue)
-            // console.log('Tindex....' + targetIndex)
-            // console.log(newMediaArray)
-
-            // if (targetValue) {
-            if (targetValue && tempMediaType === targetValue[0]) {
-                console.log('------ GETTING THERE!!! ------')
-                console.log('TV.....' + targetValue[1])
-                // newMediaArray.splice( targetIndex + 1, 1, targetValue.splice(1, 1, tempMediaLink) )
-                newMediaArray.splice(targetIndex, 1, newEntry)
-                tempState = Object.fromEntries(newMediaArray)
-                // finalObject = Object.fromEntries(newMediaArray)
-                // tempState = finalObject
-                console.log(tempState)
-                // console.log(tempState)
-                // setMediaState(finalObject)
-                // setFormState({...formState, mediaLinks : {finalObject} })
-                // console.log(mediaState)
-                // return tempState
-                // newEntry = []
-            }
-            // console.log(formState.mediaLinks)
-            // console.log(tempState)
-            // console.log(formState.mediaLinks)
-            // setFormState({ ...formState, mediaLinks : tempState })
-            return tempState
+            let newEntry = [ tempMediaType , tempState[tempMediaType] ]
+            console.log('-------------------------')
+            console.log('New Entry....' + newEntry)
+            console.log('-------------------------')
+            console.log(tempState)
+            return
         }
 
 
-
 {/* SUBMIT ------------- */}
-        const onSubmit = async (e) => {
+        const handleSubmit = async (e) => {
             e.preventDefault()
             setFormState({ ...formState, mediaLinks : tempState })
-
-            try {
-                const url = 'http://localhost:4000/bands'
-                const { formState : res } = await axios.post(url, formState)
-                // console.log(res.message)
-                console.log(formState)
-            } catch (error) {
-                console.error(error)
-            }
+            console.log(formState.mediaLinks)
+            dispatch(createBand(formState))
+            // getBands()
+            // try {
+            //     const url = 'http://localhost:4000/bands'
+            //     const { formState : res } = await axios.post(url, formState)
+            //     // console.log(res.message)
+            //     console.log(formState)
+            //     console.log('------ OLD WAY ------')
+            // } catch (error) {
+            //     console.error(error)
+            // }
 
             // dispatch(
             //     createBand(formState)
@@ -171,7 +157,7 @@ const FormPage = ({ type }) => {
         // </form>
         <div className='container'>
 
-        <form onSubmit={onSubmit} className='form'>
+        <form onSubmit={handleSubmit} className='form'>
             
 {/* MAIN INFO ------------- */}
             <section className='band-info'>
@@ -244,7 +230,7 @@ const FormPage = ({ type }) => {
                         id="calendarID"
                         name="calendarID"
                         placeholder="Paste your Calendar ID"
-                        // value={formState.calendarID}
+                        value={formState.calendarID}
                         onChange={handleChange} 
                     />
                 </label>
@@ -252,6 +238,7 @@ const FormPage = ({ type }) => {
 {/* MEDIA ICONS ------------- */}
                 <span>Media Links</span>
             <section className='mediaLinks-section'>
+
                 <select name="mediaType" onChange={handleMediaIcons}>
                     <option id="default" name="default" value={null} >Select Media Type</option>
                     <option id="facebook" name="facebook" value='facebook' >Facebook</option>
@@ -262,7 +249,7 @@ const FormPage = ({ type }) => {
                     <option id="cashApp" name="cashApp" value="cashApp" >CashApp</option>
                     <option id="spotify" name="spotify" value="spotify" >Spotify</option>
                 </select>
-                <input type="text" placeholder='Paste your link here' name="mediaLink" onChange={handleMediaIcons} ></input>
+                <input type="text" name="mediaLink" onChange={handleMediaIcons} value={tempState[tempMediaType]} />
             </section>
 {/* FORM BUTTONS ------------- */}
             <div className='formButtons-container'>

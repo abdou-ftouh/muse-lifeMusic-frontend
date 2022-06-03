@@ -1,53 +1,43 @@
 import "./style.css";
 // import { bands } from "../../seeds";
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import { useDispatch, useSelector } from "react-redux";
+import { allBands, getBandsError, getBandsStatus, getBands } from "./bandsSlice";
+
 import DisplayCard from "../displayCard/DisplayCard";
 
+
+
 const Bands = () => {
-    const [bands, setBands] = useState([]);
+    const dispatch = useDispatch();
+
+    const bands = useSelector(allBands);
+    console.log(bands)
+    const bandsStatus = useSelector(getBandsStatus);
+    const error = useSelector(getBandsError);
 
     useEffect(() => {
-        getBands()
+        if (bandsStatus === 'idle') {
+            dispatch(getBands())
+        }
     }, [])
 
-  // const bands = useSelector(state => state.bands);
+    return (
+        <div className="bandsContainer">
+            {
+                bands
+                ? (
+                    bands?.map((band, i) => (
+                    <DisplayCard key={band._id} type="band" band={band} />
+                    ))
+                ) : <h1>Loading Bands....</h1>
 
-    async function getBands() {
-      try {
-            const url = "http://localhost:4000/bands";
-            await axios.get(url)
-                .then((res) => {
-                    console.log(res.data)
-                    setBands(res.data)
-                })
-    } catch (error) {
-    console.error(error);
-        }
-  };
-
-//   const bandsList = bands?.map((band, i) => (
-//     <DisplayCard key={band._id} type="band" band={band} />
-//   ));
-
-  console.log(bands)
-
-  return (
-    <div className="bandsContainer">
-        {
-            bands
-            ? (
-                bands?.map((band, i) => (
-                   <DisplayCard key={band._id} type="band" band={band} />
-                ))
-            ) : <h1>Loading Bands....</h1>
-
-        }
-    </div>
-  )
+            }
+        </div>
+    )
 };
 
 export default Bands;
