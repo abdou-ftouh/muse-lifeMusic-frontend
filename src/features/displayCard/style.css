@@ -10,7 +10,7 @@
 
     text-decoration: none;
     color: black;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     /* font-size: larger; */
     font-style: oblique;
     overflow: hidden;
@@ -44,7 +44,9 @@
 .bandCard:nth-child(3n) {
     background-color: rgba(45, 52, 83, 0.813);
 }
-
+.likes {
+    font-size: 1.2rem;
+}
 
 
 /* ------------------- EVENTS ------------------- */

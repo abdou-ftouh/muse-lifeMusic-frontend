@@ -7,7 +7,7 @@ import React from 'react'
 const Header = () => {
   const handleLogout=()=>{
     localStorage.removeItem("token");
-    window.location.replace("http://localhost:3000/")
+    window.location = "/home"
 }
   return (
     <div className='header'>
