@@ -45,7 +45,7 @@ const DisplayCard = ({ type, band, event }) => {
             < div className="displayCard bandCard">
 
                 <div className="likes" onClick={addLikes}><FontAwesomeIcon icon={ faHeart }/> <h6>{band.likes}</h6></div>
-                <Link to='/bands:id'>
+                {/* <Link to='/bands:id'> */}
                     {/* <img src={band.images ? band.images[0] : band1} 
                         alt={band.name} 
                     /> */}
@@ -59,7 +59,7 @@ const DisplayCard = ({ type, band, event }) => {
                         ))
                     }
                 </section>
-                </Link>
+                {/* </Link> */}
             </div>
         );
         case "event":
