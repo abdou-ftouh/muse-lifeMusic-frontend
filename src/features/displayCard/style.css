@@ -3,17 +3,76 @@
     width: 180px;
     padding-top: 0;
 
-
     background-color: darkgrey;
     border: 3px inset black;
     border-radius: 0.5rem;
+    text-align: center;
 
     text-decoration: none;
     color: black;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: larger;
+    /* font-size: larger; */
     font-style: oblique;
+    overflow: hidden;
 }
+.displayCard h1 {
+    color: beige;
+}
+.genres-section {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 100%;
+    font-size: small;
+}
+
+/* ------------------- BANDS ------------------- */
+.bandCard {
+    opacity: 80%;
+}
+.bandCard:hover {
+    opacity: 100%;
+    border-color: bisque;
+}
+
+.bandCard:nth-child(1n) {
+    background-color: rgba(114, 229, 158, 0.813);
+}
+.bandCard:nth-child(2n) {
+    background-color: rgba(220, 193, 122, 0.834)
+}
+.bandCard:nth-child(3n) {
+    background-color: rgba(45, 52, 83, 0.813);
+}
+
+
+
+/* ------------------- EVENTS ------------------- */
+.eventCard {
+    opacity: 80%;
+}
+.eventCard:hover {
+    opacity: 100%;
+    border-color: bisque;
+}
+
+.eventCard:nth-child(1n) {
+    background-color: rgba(229, 172, 114, 0.813);
+}
+.eventCard:nth-child(2n) {
+    background-color: rgba(241, 159, 77, 0.813)
+}
+.eventCard:nth-child(3n) {
+    background-color: rgba(195, 124, 52, 0.813);
+}
+
+
+
+
+
+
+
+
 
 .genres {
     display: flex;
