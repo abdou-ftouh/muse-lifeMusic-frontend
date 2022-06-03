@@ -2,7 +2,9 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import styles from './style.css'
+
 
 const Login=()=> {
     const [checked, setChecked] = useState(true);
