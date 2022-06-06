@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Local Music App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Project Idea
+On load, users will be able to view local live music events in their area, including data points like featured band, location, time, etc. These events will appear on a Google Map based on proximity(default) but can be filtered by band, by date/time, by venue.
+There will be two types of users: Providers and Endusers
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The bands and venues are the Providers. Via form, we will collect their information, including calendar ID. This calendar data point will be our way of collecting event data. They will have to make an account and have full CRUDability on account details. Their events will update automatically based on the updates they make on their calendar
+The Endusers are the every day people who use the app. Default: they’ll be able to view bands and have filtering capabilities. They’ll be able to like bands. This will be the social media aspect of the app and will drive traffic. The Endusers with profiles will be able to add custom settings such as favorite bands [ ], favorite venues [ ], favorite dates/times [ ]. They will get notifications based on their custom settings.
 
-### `npm test`
+#### Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React,js
+- Redux
+- Html
+- Css
+- JavaScript
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Wireframes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Signup Page
+![Signup Page](https://i.imgur.com/7qkYFaD.png)
+### Signin Page
+![Signin Page](https://i.imgur.com/FgtPuUz.png)
+### Home Page
+![Home Page](https://i.imgur.com/UTgiYTK.png)
+### Form Page
+![Form Page](https://i.imgur.com/VtZdd2b.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![]()
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Go to My App
+https://ftouh-online-shop.herokuapp.com/home
