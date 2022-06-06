@@ -37,6 +37,3 @@ The Endusers are the every day people who use the app. Default: they’ll be abl
 ![]()
 
 ---
-
-## Go to My App
-https://ftouh-online-shop.herokuapp.com/home
